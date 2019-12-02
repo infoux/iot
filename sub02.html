@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>실시간 데이터 연계</title>
+        <link href="source/css/style.css" rel="stylesheet">
+        <link href="source/css/boxicons.css" rel="stylesheet">
+    </head>
+
+    <body class="sub sub02">
+        <!-- 대용량데이터신청 : sub01 / 실시간 데이터 연계 : sub02 / 관리자 : sub03 -->
+        <!-- S:skip_navi -->
+        <div class="skip_navi">
+            <a class="sr-only sr-only-focusable" href="#content">본문 바로가기</a>
+            <a class="sr-only sr-only-focusable" href="#footer">푸터 바로가기</a>
+        </div>
+        <!-- E:skip_navi -->
+        <!-- S:header -->
+        <header id="header">
+            <div class="container">
+                <h1>
+                    <a href="/">대중교통 이동형IoT 통합정보</a>
+                </h1>
+
+                <a class="tool" href="">
+                    <i class='bx bx-cog'></i>관리자페이지</a>
+            </div>
+        </header>
+        <!-- E:header -->
+        <!-- S:mainContent -->
+        <div id="content">
+            <section class="sub-title">
+                <div class="container">
+                    <h2>
+                        <i class='bx bx-data'></i>
+                        <small>제주특별자치도 대중교통</small>실시간 데이터 연계</h2>
+
+                </div>
+            </section>
+
+            <section class="sub-form">
+                <div class="container">
+                    <h3>
+                        기본정보 입력
+
+                        <a href="">
+                            <i class='bx bx-file'></i>연계가이드 다운로드</a>
+                    </h3>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <label for="name">신청자명</label>
+                                </th>
+                                <td><input type="text" id="name" placeholder="이름을 입력하세요"></td>
+                                <th>
+                                    <label for="organization">신청기관</label>
+                                </th>
+                                <td><input type="text" id="organization" placeholder="기관명을 입력하세요"></td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="tel">전화번호</label>
+                                </th>
+                                <td colspan="3">
+                                    <input type="text" id="tel" placeholder="- 을 제외한 숫자만 입력">
+                                    <i>※ 신청자(기관) 확인을 위해 유선 통화로 검증합니다.</i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="text">메일주소</label>
+                                </th>
+                                <td colspan="3">
+                                    <input type="text" id="mail" placeholder="메일주소를 입력하세요">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>신청정보 입력</h3>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <label for="ip">신청IP</label>
+                                </th>
+                                <td><input type="text" id="ip" placeholder="IP주소를 입력하세요"></td>
+                                <th>
+                                    <label for="port">Port</label>
+                                </th>
+                                <td><input type="text" id="port" placeholder="포트번호를 입력하세요"></td>
+                            </tr>
+
+                            <tr>
+                                <th>사용자동의</th>
+                                <td colspan="3">
+                                    <input type="checkbox" id="agree">
+                                    <label for="agree">
+                                        <i class='bx bxs-check-square'></i>실시간 데이터 연계를 위해 귀하의 서버 접속을 허용합니다.</label>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div class="btn-set">
+                        <div class="left">
+                            <a class="btn" href="">수정</a>
+                            <a class="btn" href="">삭제</a>
+                        </div>
+
+                        <div class="right">
+                            <a class="btn main" href="">신청하기</a>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- E:mainContent -->
+        <!-- S:footer -->
+        <footer id="footer">
+            <p class="copyright">Copyright 2019 제주특별자치도. All rights reserved</p>
+        </footer>
+        <!-- E:footer -->
+    </body>
+
+</html>

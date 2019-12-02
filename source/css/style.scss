@@ -1,0 +1,494 @@
+// out: ./style.css, compress: true, sourceMap: false
+@import "normalize", "rem", "font", "color", "mixin";
+
+
+
+/* basic */
+$min-width: 320px;
+$img-url: "../images";
+$screen-size-pc : 1200px;
+
+* {
+    @include box-sizing();
+}
+
+input,
+select,
+textarea {
+    @include border-radius(0);
+/*
+    @media all and (max-width: 1199px) {
+        appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -webkit-appearance: none;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+*/
+}
+
+
+a {
+    text-decoration: none;
+    color: $text-link-color;
+}
+/*font*/
+html {
+    min-width: $min-width;
+    max-width: 100%;
+    font-size: 14px;
+    min-height: 100%;
+}
+
+
+body {
+    font-family: $myfont, "Malgun Gothic", "apple sd gothic neo", sans-serif;
+    color: $text-color;
+
+}
+
+.sr-only {
+    position: absolute !important;
+    overflow: hidden !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    clip: rect(0, 0, 0, 0) !important;
+    border: 0 !important;
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+    position:static;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+}
+
+
+/* style */
+
+body {
+
+    .container {
+        text-align:left;
+        vertical-align:top;
+        @include container($screen-size-pc);
+        padding: 0;
+    }
+
+    &.main {
+        background:url("../images/main-bg.jpg") no-repeat center / cover;
+        @include flex;
+        height:100vh;
+
+        &::after {
+            content:"";
+            display:block;
+            position:fixed;
+            z-index:-1;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            background-color:rgba(255,255,255,0.54);
+        }
+
+        header {
+            position:relative;
+            background:rgba(41,45,71,0.96);
+            color:#fff;
+            width:590px;
+            height:294.5px;
+            padding:50px;
+
+            h1 {
+                position:absolute;
+                left:0;
+                top:-90px;
+                @include pmz(0,0);
+                @include zero;
+                width:390px;
+                height:47.35px;
+                background:url("../images/jeju-logo.svg") no-repeat center / 100% auto;
+
+            }
+
+            h2 {
+                @include pmz(0,0);
+                font-size:56px;
+
+                small {
+                    display:block;
+                    font-weight:200;
+                    font-size:32px;
+                    margin-bottom:10px;
+                }
+            }
+
+            p.copyright {
+                @include pmz(0,0);
+                position:absolute;
+                left:50px;
+                bottom:50px;
+                color:rgba(255,255,255,0.5);
+            }
+        }
+
+        div#content {
+            position:relative;
+            z-index:10;
+            width:594.5px;
+            height:325px;
+            background:url("../images/main-btn.svg") no-repeat center / 100% auto;
+            margin:-31px 0 0 -45px;
+            @include zero;
+
+            a {
+                display:inline-block;
+                font-size:20px;
+                font-weight:200;
+                width:275px;
+                height:296px;
+                color:#fff;
+                text-align:center;
+
+                i {
+                    font-size:130px;
+                    color:rgba(0,0,0,0.28);
+                    margin:40px 0 20px;
+                }
+
+                strong {
+                    display:block;
+                    font-size:26px;
+                    padding-bottom:10px;
+                }
+            }
+
+        }
+    }
+
+    &.sub {
+
+        &.sub01 {
+            --color : #0075bc;
+        }
+
+        &.sub02 {
+            --color : #009F74;
+        }
+
+        &.sub03 {
+            --color : #3F4883;
+        }
+
+        /* header */
+        header {
+            text-align:center;
+            background:#0075bc;
+            background:var(--color);
+            height:368px;
+            margin:0 0 -256px;
+
+            .container {
+                height:75px;
+                line-height:75px;
+                overflow:hidden;
+                border-bottom:1px solid rgba(255,255,255,0.4);
+
+                h1 {
+                    display:inline-block;
+                    margin:0;
+                    font-size:18px;
+
+                    a {
+                        display:block;
+                        color:#fff;
+
+                        &::before {
+                            content:"";
+                            display:inline-block;
+                            position:relative;
+                            top:6px;
+                            margin:0 6px 0 0;
+                            width: 70.7px;
+                            height:27.5px;
+                            background:url("../images/jeju-logo-s.svg") no-repeat center / 100% auto;
+                        }
+                    }
+                }
+
+                a.tool {
+                    display:block;
+                    float:right;
+                    @include zero;
+                    padding:10px 0 0;
+
+                    i {
+                        font-size:28px;
+                        color:#fff
+                    }
+                }
+            }
+        }
+    
+        div#content {
+            
+            section.sub-title {
+                text-align:center;
+                .container {
+                    
+                    background:url("../images/sub-bg.svg") no-repeat right center / auto;
+
+
+                    h2 {
+                        position:relative;
+                        color:#fff;
+                        font-size:36px;
+                        font-weight:800;
+                        padding:0 0 0 110px;
+
+                        small {
+                            display:block;
+                            font-weight:200;
+                            font-size:20px;
+                            margin:0 0 6px;
+                        }
+
+                        i {
+                            position:absolute;
+                            left:0;
+                            top:-20px;
+                            font-size:112px;
+                            color:rgba(255,255,255,0.35);
+                        }
+                    }
+
+    
+                }
+            }
+
+            section.sub-form {
+                text-align:center;
+
+                .container {
+                    background:#fff;
+                    padding:40px;
+
+                    h3 {
+                        position:relative;
+                        font-size:20px;
+                        margin:0 0 10px;
+
+                        a {
+                            font-size:14px;
+                            font-weight:400;
+                            display:block;
+                            position:absolute;
+                            right:0;
+                            bottom:0;
+                            background:#555;
+                            color:#fff;
+                            line-height:32px;
+                            border-radius:5px;
+                            padding:0 10px;
+
+                            i {
+                                position:relative;
+                                top:2px;
+                                margin-right:4px;
+                            }
+                        }
+                    }
+
+                    table {
+                        width:100%;
+                        border-left:1px solid #ccc;
+                        border-top:1px solid #ccc;
+                        margin-bottom:30px;
+
+                        tbody {
+                            tr {
+                                th,
+                                td {
+                                    border-right:1px solid #ccc;
+                                    border-bottom:1px solid #ccc;
+                                }
+                                th {
+                                    padding:5px 10px;
+                                    width:136px;
+                                    background:#f4f4f4;
+                                }
+
+                                td {
+                                    padding:5px;
+
+                                    &>i {
+                                        font-style:normal;
+                                        padding:0 10px;
+                                    }
+
+                                    input[type="text"] {
+                                        height:38px;
+                                        border:1px solid #ccc;
+                                        padding:0 10px;
+                                        border-radius:5px;
+                                        width:412px;
+
+                                        &.small {
+                                            width:148px;
+                                        }
+
+                                        &.normal {
+                                            width:261px;
+                                        }
+
+                                        &.big {
+                                            width:864px;
+                                        }
+                                    }
+
+                                    select {
+                                        padding:0 40px 0 10px;
+                                        border:1px solid #ccc;
+                                        height:38px;
+                                        background: url('../images/down.svg') no-repeat 98% 50%; 
+                                        border-radius: 5px; 
+                                        -webkit-appearance: none; 
+                                        -moz-appearance: none;
+                                        appearance: none;
+                                    }
+
+                                    select::-ms-expand {
+                                        display: none;
+                                    }
+                                    
+                                    
+
+                                    input[type="radio"],
+                                    input[type="checkbox"] {
+                                        display:none;
+                                    }
+
+                                    label {
+                                        position:relative;
+                                        line-height:38px;
+                                        padding:0 30px 0 0;
+                                        font-weight:600;
+
+                                        i {
+                                            font-size:26px;
+                                            position:relative;
+                                            top:7px;
+                                            margin:0 4px 0 0;
+                                            color:#ccc;
+                                        }
+                                    }
+                                    
+
+                                    input[type="checkbox"] + label {
+                                        i {
+                                            font-size:20px;
+                                            top:5px;
+                                        }
+                                    }
+
+                                    input:checked + label {
+                                        color:#0075bc;
+                                        color: var(--color);
+                                        i {
+                                            color:#0075bc;
+                                            color:var(--color);
+                                        }
+                                    }
+
+                                    button.getfile {
+                                        font-size:14px;
+                                        display:inline-block;
+                                        background:#DEDEDF;
+                                        line-height:38px;
+                                        border-radius:5px;
+                                        padding:0 14px;
+                                        border:none;
+                                        font-weight:600;
+                                    }
+
+
+                                    a {
+                                        font-size:14px;
+                                        display:inline-block;
+                                        background:#555;
+                                        color:#fff;
+                                        line-height:38px;
+                                        border-radius:5px;
+                                        padding:0 20px;
+
+                                        &.right {
+                                            float:right;
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+                    div.btn-set {
+                        @include zero;
+
+                        &>div {
+                            display:inline-block;
+                            width:50%;
+                            vertical-align:top;
+
+                            &.left {
+                                text-align:left;
+                            }
+
+                            &.right {
+                                text-align:right;
+                            }
+
+                            a {
+                                display:inline-block;
+                                line-height:44px;
+                                font-weight:600;
+                                padding:0 20px;
+                                font-size:14px;
+                                margin:0 2px;
+                                border-radius:5px;
+                                background:#eee;
+
+                                &.main {
+                                    background:#0075bc;
+                                    background: var(--color);
+                                    color:#fff;
+                                    padding:0 60px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+    
+    
+        }
+    
+        footer#footer {
+            background:#555;
+            text-align:center;
+            font-size:16px;
+            color:rgba(255,255,255,0.5);
+            padding:30px;
+    
+        }
+
+    }
+}
